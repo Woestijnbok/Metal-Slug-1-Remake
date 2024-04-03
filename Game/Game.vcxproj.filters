@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Game Files">
+      <UniqueIdentifier>{f739cc7d-e8ae-4016-8002-fccbf86927e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes">
+      <UniqueIdentifier>{b712a761-0a94-4755-9907-d065241c220a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Avatar">
+      <UniqueIdentifier>{41a4419b-a8a5-4622-8fd2-ef3044a45619}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Camera">
+      <UniqueIdentifier>{f84b6c43-8721-4cb1-b8d9-a1a828c234e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Level">
+      <UniqueIdentifier>{f390d503-a97d-4e86-9e71-b802649aa8eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Sprite">
+      <UniqueIdentifier>{73847b03-c7b0-412b-9bf6-8839581da015}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Platform">
+      <UniqueIdentifier>{07de2e5c-a21f-4196-b99b-9b23ca6df045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Enemy">
+      <UniqueIdentifier>{559ea90a-74cc-4717-9121-7196853d8a00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Enemy\EnemyManager">
+      <UniqueIdentifier>{6d491c5d-0fe6-4c17-ab78-ae26cfe8ec22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Enemy\RebelSoldier">
+      <UniqueIdentifier>{b8a226ec-0f3a-4c7b-95ff-cb1daaa58844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Enemy\Boss">
+      <UniqueIdentifier>{74f9cafd-5a8c-42f1-97b3-30579f8849bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Projectile">
+      <UniqueIdentifier>{cb3fec90-8182-4231-b516-30a857caf7e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Files">
+      <UniqueIdentifier>{84b2c8bf-48b8-42a9-a820-ed81a3b43061}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Projectile\Bullet">
+      <UniqueIdentifier>{edab015f-cabd-474e-9bf6-5d7170d6843f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Projectile\Plasma">
+      <UniqueIdentifier>{33a997e9-c733-412c-a3ac-fafc441838cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Projectile\ProjectileManager">
+      <UniqueIdentifier>{883fe3f7-f244-406e-bc58-62e8e3ae5e1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Projectile\LaserBolt">
+      <UniqueIdentifier>{c462f0a8-119a-4f7c-b171-ad881296ce3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\SoundManager">
+      <UniqueIdentifier>{cd3a68d8-0164-46fc-8284-a75ecf5c6720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Enemy\Enemy">
+      <UniqueIdentifier>{dcf96564-431c-4272-8e7b-f1fb4e7f38b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Hud">
+      <UniqueIdentifier>{cd83b45c-5275-459e-b906-b9265e0bbea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Enemy\RebelSoldier Rifle">
+      <UniqueIdentifier>{c9167dba-6a35-4bd0-b6df-0e889d267404}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\Projectile\RifleBullet">
+      <UniqueIdentifier>{74ba731a-7272-41e2-abe8-14522a93a7b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My Classes\SettingMenu">
+      <UniqueIdentifier>{01a5ad39-4aa7-4e55-ad19-afb117c8d72e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Camera.cpp">
+      <Filter>My Classes\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>My Classes\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>My Classes\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Avatar.cpp">
+      <Filter>My Classes\Avatar</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform.cpp">
+      <Filter>My Classes\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="PlatformManager.cpp">
+      <Filter>My Classes\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>My Classes\Enemy\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="RebelSoldier.cpp">
+      <Filter>My Classes\Enemy\RebelSoldier</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyManager.cpp">
+      <Filter>My Classes\Enemy\EnemyManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Torso.cpp">
+      <Filter>My Classes\Avatar</Filter>
+    </ClCompile>
+    <ClCompile Include="Leg.cpp">
+      <Filter>My Classes\Avatar</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>My Classes\Projectile\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Plasma.cpp">
+      <Filter>My Classes\Projectile\Plasma</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectileManager.cpp">
+      <Filter>My Classes\Projectile\ProjectileManager</Filter>
+    </ClCompile>
+    <ClCompile Include="LaserBolt.cpp">
+      <Filter>My Classes\Projectile\LaserBolt</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>My Classes\SoundManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>My Classes\Enemy\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Hud.cpp">
+      <Filter>My Classes\Hud</Filter>
+    </ClCompile>
+    <ClCompile Include="RebelSoldierRifle.cpp">
+      <Filter>My Classes\Enemy\RebelSoldier Rifle</Filter>
+    </ClCompile>
+    <ClCompile Include="RifleBullet.cpp">
+      <Filter>My Classes\Projectile\RifleBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingMenu.cpp">
+      <Filter>My Classes\SettingMenu</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Camera.h">
+      <Filter>My Classes\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>My Classes\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>My Classes\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Avatar.h">
+      <Filter>My Classes\Avatar</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform.h">
+      <Filter>My Classes\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="PlatformManager.h">
+      <Filter>My Classes\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile.h">
+      <Filter>My Classes\Projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>My Classes\Enemy\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="RebelSoldier.h">
+      <Filter>My Classes\Enemy\RebelSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyManager.h">
+      <Filter>My Classes\Enemy\EnemyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Torso.h">
+      <Filter>My Classes\Avatar</Filter>
+    </ClInclude>
+    <ClInclude Include="Leg.h">
+      <Filter>My Classes\Avatar</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>My Classes\Projectile\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Plasma.h">
+      <Filter>My Classes\Projectile\Plasma</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectileManager.h">
+      <Filter>My Classes\Projectile\ProjectileManager</Filter>
+    </ClInclude>
+    <ClInclude Include="LaserBolt.h">
+      <Filter>My Classes\Projectile\LaserBolt</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>My Classes\SoundManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>My Classes\Enemy\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Hud.h">
+      <Filter>My Classes\Hud</Filter>
+    </ClInclude>
+    <ClInclude Include="RebelSoldierRifle.h">
+      <Filter>My Classes\Enemy\RebelSoldier Rifle</Filter>
+    </ClInclude>
+    <ClInclude Include="RifleBullet.h">
+      <Filter>My Classes\Projectile\RifleBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingMenu.h">
+      <Filter>My Classes\SettingMenu</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="4152"
+   height="336"
+   viewBox="0 0 4152 336"
+   sodipodi:docname="Level.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="2.8284272"
+     inkscape:cx="3884.3142"
+     inkscape:cy="143.3659"
+     inkscape:window-width="2880"
+     inkscape:window-height="1514"
+     inkscape:window-x="3829"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g8" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g8">
+    <image
+       width="4152"
+       height="336"
+       preserveAspectRatio="none"
+       xlink:href="../../../../../Users/Artuu/OneDrive%20-%20Hogeschool%20West-Vlaanderen/Year%201/Semester%202/Programming%202/Exam/Resources/Level/Level%20Layout.png"
+       id="image10" />
+    <path
+       style="fill:#000000"
+       d="m 678,280 v 35 h 2702 v -45 h 90 v -30 h 75 v -30 h 90 v -32 h 517 V 336 H 0 v -56 z"
+       id="path170"
+       sodipodi:nodetypes="ccccccccccccccc" />
+  </g>
+</svg>

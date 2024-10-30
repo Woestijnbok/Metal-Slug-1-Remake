@@ -331,6 +331,12 @@ __pycache__/
 # tools/**
 # !tools/packages.config
 
+#Make sure to track all resources and libraries
+!Libraries/
+!Libraries/**
+!Resources/
+!Resources/**
+
 # Tabs Studio
 *.tss
 

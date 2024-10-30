@@ -1,4 +1,5 @@
 #pragma once
+
 //ML Detection Extension
 #ifdef _DEBUG
 #define _CRTDBG_MAP_ALLOC

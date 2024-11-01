@@ -18,34 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="BaseGame.cpp" />
-    <ClCompile Include="Matrix2x3.cpp" />
-    <ClCompile Include="SoundEffect.cpp" />
-    <ClCompile Include="SoundStream.cpp" />
-    <ClCompile Include="structs.cpp" />
-    <ClCompile Include="SVGParser.cpp" />
-    <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="utils.cpp" />
-    <ClCompile Include="Vector2f.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="BaseGame.h" />
-    <ClInclude Include="Enumerations.h" />
-    <ClInclude Include="Matrix2x3.h" />
-    <ClInclude Include="base.h" />
-    <ClInclude Include="SoundEffect.h" />
-    <ClInclude Include="SoundStream.h" />
-    <ClInclude Include="structs.h" />
-    <ClInclude Include="SVGParser.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="utils.h" />
-    <ClInclude Include="Vector2f.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5adab721-cb6c-4ef5-89eb-20ec51a13cfc}</ProjectGuid>
+    <ProjectGuid>{db6d9583-e3f7-43d7-bba7-1a4dd264aad4}</ProjectGuid>
     <RootNamespace>Engine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -94,21 +70,29 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(ProjectDir)Output\$(Configuration)\$(PlatformTarget)\</OutDir>
-    <IntDir>$(ProjectDir)Intermediate\$(Configuration)\$(PlatformTarget)\</IntDir>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(ProjectDir)Output\$(Configuration)\$(PlatformTarget)\</OutDir>
     <IntDir>$(ProjectDir)Intermediate\$(Configuration)\$(PlatformTarget)\</IntDir>
+    <IncludePath>$(SolutionDir)\Libraries\SDL\include;$(SolutionDir)\Libraries\SDL Image\include;$(SolutionDir)\Libraries\SDL TTF\include;$(SolutionDir)Libraries\SDL Mixer\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Libraries\SDL\lib\$(PlatformTarget);$(SolutionDir)\Libraries\SDL Image\lib\$(PlatformTarget);$(SolutionDir)\Libraries\SDL TTF\lib\$(PlatformTarget);$(SolutionDir)\Libraries\SDL Mixer\lib\$(PlatformTarget);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(ProjectDir)Output\$(Configuration)\$(PlatformTarget)\</OutDir>
     <IntDir>$(ProjectDir)Intermediate\$(Configuration)\$(PlatformTarget)\</IntDir>
+    <IncludePath>$(SolutionDir)\Libraries\SDL\include;$(SolutionDir)\Libraries\SDL Image\include;$(SolutionDir)\Libraries\SDL TTF\include;$(SolutionDir)Libraries\SDL Mixer\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Libraries\SDL\lib\$(PlatformTarget);$(SolutionDir)\Libraries\SDL Image\lib\$(PlatformTarget);$(SolutionDir)\Libraries\SDL TTF\lib\$(PlatformTarget);$(SolutionDir)\Libraries\SDL Mixer\lib\$(PlatformTarget);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(ProjectDir)Output\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <IntDir>$(ProjectDir)Intermediate\$(Configuration)\$(PlatformTarget)\</IntDir>
+    <IncludePath>$(SolutionDir)\Libraries\SDL\include;$(SolutionDir)\Libraries\SDL Image\include;$(SolutionDir)\Libraries\SDL TTF\include;$(SolutionDir)Libraries\SDL Mixer\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Libraries\SDL\lib\$(PlatformTarget);$(SolutionDir)\Libraries\SDL Image\lib\$(PlatformTarget);$(SolutionDir)\Libraries\SDL TTF\lib\$(PlatformTarget);$(SolutionDir)\Libraries\SDL Mixer\lib\$(PlatformTarget);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(ProjectDir)Output\$(Configuration)\$(PlatformTarget)\</OutDir>
     <IntDir>$(ProjectDir)Intermediate\$(Configuration)\$(PlatformTarget)\</IntDir>
+    <IncludePath>$(SolutionDir)\Libraries\SDL\include;$(SolutionDir)\Libraries\SDL Image\include;$(SolutionDir)\Libraries\SDL TTF\include;$(SolutionDir)Libraries\SDL Mixer\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Libraries\SDL\lib\$(PlatformTarget);$(SolutionDir)\Libraries\SDL Image\lib\$(PlatformTarget);$(SolutionDir)\Libraries\SDL TTF\lib\$(PlatformTarget);$(SolutionDir)\Libraries\SDL Mixer\lib\$(PlatformTarget);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -118,16 +102,12 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\include;$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\include;$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\include;$(SolutionDir)Libraries\SDLMixer\SDL2_mixer-2.6.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
       </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <Lib>
-      <AdditionalDependencies>kernel32.lib;User32.lib;Shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -139,7 +119,6 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\include;$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\include;$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\include;$(SolutionDir)Libraries\SDLMixer\SDL2_mixer-2.6.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -148,29 +127,21 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <Lib>
-      <AdditionalDependencies>kernel32.lib;User32.lib;Shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
-      <TreatWarningAsError>false</TreatWarningAsError>
-      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\include;$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\include;$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\include;$(SolutionDir)Libraries\SDLMixer\SDL2_mixer-2.6.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
       </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <Lib>
-      <AdditionalDependencies>kernel32.lib;User32.lib;Shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -182,7 +153,6 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\include;$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\include;$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\include;$(SolutionDir)Libraries\SDLMixer\SDL2_mixer-2.6.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -191,10 +161,31 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <Lib>
-      <AdditionalDependencies>kernel32.lib;User32.lib;Shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Lib>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="base.h" />
+    <ClInclude Include="BaseGame.h" />
+    <ClInclude Include="Enumerations.h" />
+    <ClInclude Include="Matrix2x3.h" />
+    <ClInclude Include="SoundEffect.h" />
+    <ClInclude Include="SoundStream.h" />
+    <ClInclude Include="structs.h" />
+    <ClInclude Include="SVGParser.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="utils.h" />
+    <ClInclude Include="Vector2f.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseGame.cpp" />
+    <ClCompile Include="Matrix2x3.cpp" />
+    <ClCompile Include="SoundEffect.cpp" />
+    <ClCompile Include="SoundStream.cpp" />
+    <ClCompile Include="structs.cpp" />
+    <ClCompile Include="SVGParser.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="utils.cpp" />
+    <ClCompile Include="Vector2f.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

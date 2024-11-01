@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{1c01d960-b0c7-43f5-9eed-0869016e0f69}</ProjectGuid>
+    <ProjectGuid>{dae76f02-aea1-45b6-b383-ec893f4f4b9d}</ProjectGuid>
     <RootNamespace>Game</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -59,20 +59,46 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SDL.props" />
+    <Import Project="..\VLD.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SDL.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SDL.props" />
+    <Import Project="..\VLD.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SDL.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <CustomBuildAfterTargets>BuildCompile</CustomBuildAfterTargets>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)Output\$(Configuration)\$(PlatformTarget)\</OutDir>
     <IntDir>$(ProjectDir)Intermediate\$(Configuration)\$(PlatformTarget)\</IntDir>
+    <IncludePath>$(SolutionDir)Engine;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Engine\Output\$(Configuration)\$(PlatformTarget);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)Output\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <IntDir>$(ProjectDir)Intermediate\$(Configuration)\$(PlatformTarget)\</IntDir>
+    <IncludePath>$(SolutionDir)Engine;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Engine\Output\$(Configuration)\$(PlatformTarget);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(ProjectDir)Output\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <IntDir>$(ProjectDir)Intermediate\$(Configuration)\$(PlatformTarget)\</IntDir>
+    <IncludePath>$(SolutionDir)Engine;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Engine\Output\$(Configuration)\$(PlatformTarget);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(ProjectDir)Output\$(Configuration)\$(PlatformTarget)\</OutDir>
+    <IntDir>$(ProjectDir)Intermediate\$(Configuration)\$(PlatformTarget)\</IntDir>
+    <IncludePath>$(SolutionDir)Engine;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Engine\Output\$(Configuration)\$(PlatformTarget);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -80,21 +106,18 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\include;$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\include;$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\include;$(SolutionDir)Libraries\SDLMixer\SDL2_mixer-2.6.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Engine\Output\$(Configuration)\$(PlatformTarget);$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\lib\$(PlatformTarget);$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\lib\$(PlatformTarget);$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\lib\$(PlatformTarget);$(SolutionDir)Libraries\SDLMixer\SDL2_mixer-2.6.3\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Engine.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib</AdditionalDependencies>
+      <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Y /I "$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\lib\$(PlatformTarget)\SDL2.dll" $(OutDir)
-xcopy /Y /I "$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\lib\$(PlatformTarget)\SDL2_image.dll" $(OutDir)
-xcopy /Y /I "$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\lib\$(PlatformTarget)\SDL2_ttf.dll" $(OutDir)
-xcopy /Y /I "$(SolutionDir)Libraries\SDLMixer\SDL2_Mixer-2.6.3\lib\$(PlatformTarget)\SDL2_mixer.dll" $(OutDir)
-xcopy /E /I /Y /D "$(SolutionDir)Resources\" "$(OutDir)"
-</Command>
+      <Command>xcopy /Y /I "$(SolutionDir)Libraries\SDL\lib\$(PlatformTarget)\SDL2.dll" $(OutDir)
+xcopy /Y /I "$(SolutionDir)Libraries\SDL Image\lib\$(PlatformTarget)\SDL2_image.dll" $(OutDir)
+xcopy /Y /I "$(SolutionDir)Libraries\SDL TTF\lib\$(PlatformTarget)\SDL2_ttf.dll" $(OutDir)
+xcopy /Y /I "$(SolutionDir)Libraries\SDL Mixer\lib\$(PlatformTarget)\SDL2_mixer.dll" $(OutDir)
+xcopy /E /I /Y /D "$(ProjectDir)Resources\" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -105,23 +128,20 @@ xcopy /E /I /Y /D "$(SolutionDir)Resources\" "$(OutDir)"
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\include;$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\include;$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\include;$(SolutionDir)Libraries\SDLMixer\SDL2_mixer-2.6.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Engine\Output\$(Configuration)\$(PlatformTarget);$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\lib\$(PlatformTarget);$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\lib\$(PlatformTarget);$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\lib\$(PlatformTarget);$(SolutionDir)Libraries\SDLMixer\SDL2_mixer-2.6.3\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Engine.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib</AdditionalDependencies>
+      <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Y /I "$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\lib\$(PlatformTarget)\SDL2.dll" $(OutDir)
-xcopy /Y /I "$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\lib\$(PlatformTarget)\SDL2_image.dll" $(OutDir)
-xcopy /Y /I "$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\lib\$(PlatformTarget)\SDL2_ttf.dll" $(OutDir)
-xcopy /Y /I "$(SolutionDir)Libraries\SDLMixer\SDL2_Mixer-2.6.3\lib\$(PlatformTarget)\SDL2_mixer.dll" $(OutDir)
-xcopy /E /I /Y /D "$(SolutionDir)Resources\" "$(OutDir)"
-</Command>
+      <Command>xcopy /Y /I "$(SolutionDir)Libraries\SDL\lib\$(PlatformTarget)\SDL2.dll" $(OutDir)
+xcopy /Y /I "$(SolutionDir)Libraries\SDL Image\lib\$(PlatformTarget)\SDL2_image.dll" $(OutDir)
+xcopy /Y /I "$(SolutionDir)Libraries\SDL TTF\lib\$(PlatformTarget)\SDL2_ttf.dll" $(OutDir)
+xcopy /Y /I "$(SolutionDir)Libraries\SDL Mixer\lib\$(PlatformTarget)\SDL2_mixer.dll" $(OutDir)
+xcopy /E /I /Y /D "$(ProjectDir)Resources\" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -130,28 +150,18 @@ xcopy /E /I /Y /D "$(SolutionDir)Resources\" "$(OutDir)"
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Create</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\include;$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\include;$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\include;$(SolutionDir)Libraries\SDLMixer\SDL2_mixer-2.6.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>Engine.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)Engine\Output\$(Configuration)\$(PlatformTarget);$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\lib\$(PlatformTarget);$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\lib\$(PlatformTarget);$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\lib\$(PlatformTarget);$(SolutionDir)Libraries\SDLMixer\SDL2_mixer-2.6.3\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <CustomBuildStep>
-      <Command>
-      </Command>
-      <Message>Copying dll files to executable</Message>
-    </CustomBuildStep>
     <PostBuildEvent>
-      <Command>xcopy /Y /I "$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\lib\$(PlatformTarget)\SDL2.dll" $(OutDir)
-xcopy /Y /I "$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\lib\$(PlatformTarget)\SDL2_image.dll" $(OutDir)
-xcopy /Y /I "$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\lib\$(PlatformTarget)\SDL2_ttf.dll" $(OutDir)
-xcopy /Y /I "$(SolutionDir)Libraries\SDLMixer\SDL2_Mixer-2.6.3\lib\$(PlatformTarget)\SDL2_mixer.dll" $(OutDir)
-xcopy /E /I /Y /D "$(SolutionDir)Resources\" "$(OutDir)"
-</Command>
+      <Command>xcopy /Y /I "$(SolutionDir)Libraries\SDL\lib\$(PlatformTarget)\SDL2.dll" $(OutDir)
+xcopy /Y /I "$(SolutionDir)Libraries\SDL Image\lib\$(PlatformTarget)\SDL2_image.dll" $(OutDir)
+xcopy /Y /I "$(SolutionDir)Libraries\SDL TTF\lib\$(PlatformTarget)\SDL2_ttf.dll" $(OutDir)
+xcopy /Y /I "$(SolutionDir)Libraries\SDL Mixer\lib\$(PlatformTarget)\SDL2_mixer.dll" $(OutDir)
+xcopy /E /I /Y /D "$(ProjectDir)Resources\" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -162,23 +172,20 @@ xcopy /E /I /Y /D "$(SolutionDir)Resources\" "$(OutDir)"
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\include;$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\include;$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\include;$(SolutionDir)Libraries\SDLMixer\SDL2_mixer-2.6.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Engine\Output\$(Configuration)\$(PlatformTarget);$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\lib\$(PlatformTarget);$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\lib\$(PlatformTarget);$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\lib\$(PlatformTarget);$(SolutionDir)Libraries\SDLMixer\SDL2_mixer-2.6.3\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Engine.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib</AdditionalDependencies>
+      <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Y /I "$(SolutionDir)Libraries\SDLMain\SDL2-2.26.3\lib\$(PlatformTarget)\SDL2.dll" $(OutDir)
-xcopy /Y /I "$(SolutionDir)Libraries\SDLImage\SDL2_image-2.6.3\lib\$(PlatformTarget)\SDL2_image.dll" $(OutDir)
-xcopy /Y /I "$(SolutionDir)Libraries\SDLTtf\SDL2_ttf-2.20.2\lib\$(PlatformTarget)\SDL2_ttf.dll" $(OutDir)
-xcopy /Y /I "$(SolutionDir)Libraries\SDLMixer\SDL2_Mixer-2.6.3\lib\$(PlatformTarget)\SDL2_mixer.dll" $(OutDir)
-xcopy /E /I /Y /D "$(SolutionDir)Resources\" "$(OutDir)"
-</Command>
+      <Command>xcopy /Y /I "$(SolutionDir)Libraries\SDL\lib\$(PlatformTarget)\SDL2.dll" $(OutDir)
+xcopy /Y /I "$(SolutionDir)Libraries\SDL Image\lib\$(PlatformTarget)\SDL2_image.dll" $(OutDir)
+xcopy /Y /I "$(SolutionDir)Libraries\SDL TTF\lib\$(PlatformTarget)\SDL2_ttf.dll" $(OutDir)
+xcopy /Y /I "$(SolutionDir)Libraries\SDL Mixer\lib\$(PlatformTarget)\SDL2_mixer.dll" $(OutDir)
+xcopy /E /I /Y /D "$(ProjectDir)Resources\" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -186,6 +193,7 @@ xcopy /E /I /Y /D "$(SolutionDir)Resources\" "$(OutDir)"
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Hud.cpp" />
@@ -193,17 +201,18 @@ xcopy /E /I /Y /D "$(SolutionDir)Resources\" "$(OutDir)"
     <ClCompile Include="Leg.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Parralax.cpp" />
     <ClCompile Include="Plasma.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="PlatformManager.cpp" />
+    <ClCompile Include="PowerUp.cpp" />
+    <ClCompile Include="PowerUpManager.cpp" />
     <ClCompile Include="ProjectileManager.cpp" />
     <ClCompile Include="RebelSoldier.cpp" />
     <ClCompile Include="RebelSoldierRifle.cpp" />
     <ClCompile Include="RifleBullet.cpp" />
     <ClCompile Include="SettingMenu.cpp" />
     <ClCompile Include="SoundManager.cpp" />
-    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Torso.cpp" />
   </ItemGroup>
@@ -212,17 +221,19 @@ xcopy /E /I /Y /D "$(SolutionDir)Resources\" "$(OutDir)"
     <ClInclude Include="Boss.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Camera.h" />
-    <ClInclude Include="EnemyManager.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Hud.h" />
     <ClInclude Include="LaserBolt.h" />
     <ClInclude Include="Leg.h" />
     <ClInclude Include="Level.h" />
-    <ClInclude Include="pch.h" />
+    <ClInclude Include="Parralax.h" />
     <ClInclude Include="Plasma.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="PlatformManager.h" />
+    <ClInclude Include="PowerUp.h" />
+    <ClInclude Include="PowerUpManager.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="ProjectileManager.h" />
     <ClInclude Include="RebelSoldier.h" />
@@ -236,16 +247,4 @@ xcopy /E /I /Y /D "$(SolutionDir)Resources\" "$(OutDir)"
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-  <PropertyGroup>
-    <LocalDebuggerWorkingDirectory>$(TargetDir)</LocalDebuggerWorkingDirectory>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IntDir>$(ProjectDir)Intermediate\$(Configuration)\$(PlatformTarget)\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IntDir>$(ProjectDir)Intermediate\$(Configuration)\$(PlatformTarget)\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IntDir>$(ProjectDir)Intermediate\$(Configuration)\$(PlatformTarget)\</IntDir>
-  </PropertyGroup>
 </Project>

@@ -1,5 +1,7 @@
 #pragma once
 
+#define WIN32_LEAN_AND_MEAN  
+
 //ML Detection Extension
 #ifdef _DEBUG
 #define _CRTDBG_MAP_ALLOC

@@ -1,81 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Base Game">
+      <UniqueIdentifier>{b403cfe4-9d69-4275-ba09-9f654a0d47f1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{ecc89ef3-1b43-42f8-8a9f-9f402116c827}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Sound\Sound Effect">
+      <UniqueIdentifier>{43d2d089-e34e-4de5-a100-738832b92cf5}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="BaseGame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Matrix2x3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SoundEffect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SoundStream.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="structs.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SVGParser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="utils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector2f.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <Filter Include="Sound\Sound Stream">
+      <UniqueIdentifier>{08d585d7-f838-4d7c-a893-efd461597af1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SVG Parser">
+      <UniqueIdentifier>{e6769bee-3346-486a-bb60-831356645438}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{3e9e78e9-6fa4-492b-b5f2-6bb4f7b932f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Types">
+      <UniqueIdentifier>{9b80d0e3-aed6-4368-9323-bcbc51a4bf26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Types\Matrix">
+      <UniqueIdentifier>{8aec1f43-79b4-4dce-a5a9-a278e2c09921}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Types\Structs">
+      <UniqueIdentifier>{6354979f-61ea-4c9a-a1f3-69c98d97f06b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Types\Texture">
+      <UniqueIdentifier>{750f5675-9387-49c1-ad20-cd91de4870ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Types\Vector">
+      <UniqueIdentifier>{bfd5461f-b83c-4f4a-a377-318206082908}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseGame.h">
-      <Filter>Header Files</Filter>
+      <Filter>Base Game</Filter>
     </ClInclude>
     <ClInclude Include="Matrix2x3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="base.h">
-      <Filter>Header Files</Filter>
+      <Filter>Data Types\Matrix</Filter>
     </ClInclude>
     <ClInclude Include="SoundEffect.h">
-      <Filter>Header Files</Filter>
+      <Filter>Sound\Sound Effect</Filter>
     </ClInclude>
     <ClInclude Include="SoundStream.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="structs.h">
-      <Filter>Header Files</Filter>
+      <Filter>Sound\Sound Stream</Filter>
     </ClInclude>
     <ClInclude Include="SVGParser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Header Files</Filter>
+      <Filter>SVG Parser</Filter>
     </ClInclude>
     <ClInclude Include="utils.h">
-      <Filter>Header Files</Filter>
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="base.h" />
+    <ClInclude Include="Enumerations.h">
+      <Filter>Data Types</Filter>
+    </ClInclude>
+    <ClInclude Include="structs.h">
+      <Filter>Data Types\Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Data Types\Texture</Filter>
     </ClInclude>
     <ClInclude Include="Vector2f.h">
-      <Filter>Header Files</Filter>
+      <Filter>Data Types\Vector</Filter>
     </ClInclude>
-    <ClInclude Include="Enumerations.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseGame.cpp">
+      <Filter>Base Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix2x3.cpp">
+      <Filter>Data Types\Matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundStream.cpp">
+      <Filter>Sound\Sound Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundEffect.cpp">
+      <Filter>Sound\Sound Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="SVGParser.cpp">
+      <Filter>SVG Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="structs.cpp">
+      <Filter>Data Types\Structs</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Data Types\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2f.cpp">
+      <Filter>Data Types\Vector</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

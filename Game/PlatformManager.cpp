@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "base.h"
 #include "PlatformManager.h"
 #include "Platform.h"
 #include "SVGParser.h"

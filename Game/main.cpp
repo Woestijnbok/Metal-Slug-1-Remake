@@ -12,7 +12,7 @@ int SDL_main(int argv, char** args)
 
 	StartHeapControl();
 
-	Game* pGame{ new Game{ Window{ "Metal Slug 1 - Demeyer, Artuur - 1DAE11E", 900.0f, 672.0f } } };
+	Game* pGame{ new Game{ Window{ "Metal Slug 1 - Demeyer, Artuur", 900.0f, 672.0f } } };
 	pGame->Run();
 	delete pGame;
 

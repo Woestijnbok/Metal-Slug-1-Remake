@@ -27,8 +27,8 @@ Though the remake does not include every detail from the original, it does featu
 2. **Rifle Rebel Soldier**: A more challenging variant, this soldier will shoot at you when you get too close.
 
 <div align="center">
-  <img src=https://github.com/Woestijnbok/Metal-Slug-1/blob/main/Screenshots/Rebel%20Soldier.jpg width="300" height="auto">
-  <img src=https://github.com/Woestijnbok/Metal-Slug-1/blob/main/Screenshots/Rebel%20Soldier%20Rifle.jpg width="300" height="auto">
+  <img src=https://github.com/Woestijnbok/Metal-Slug-1/blob/main/Screenshots/Rebel%20Soldier.jpg width="400" height="auto">
+  <img src=https://github.com/Woestijnbok/Metal-Slug-1/blob/main/Screenshots/Rebel%20Soldier%20Rifle.jpg width="400" height="auto">
 </div>
 
 # Final Boss
@@ -39,8 +39,8 @@ At the end of the level, you’ll encounter a formidable boss with two attack pa
 - **Plasma Laser Attack**: This powerful attack is only available when the gun is aimed at the ground. When triggered, it fires a fast-paced laser that can deal significant damage. Stay airborne or move out of the line of fire to avoid it.
 
 <div align="center">
-  <img src=https://github.com/Woestijnbok/Metal-Slug-1/blob/main/Screenshots/Plasma%20Balls.jpg width="300" height="auto">
-  <img src=https://github.com/Woestijnbok/Metal-Slug-1/blob/main/Screenshots/Plasma%20Laser.jpg width="300" height="auto">
+  <img src=https://github.com/Woestijnbok/Metal-Slug-1/blob/main/Screenshots/Plasma%20Balls.jpg width="400" height="auto">
+  <img src=https://github.com/Woestijnbok/Metal-Slug-1/blob/main/Screenshots/Plasma%20Laser.jpg width="400" height="auto">
 </div>
 
 # Final Thoughts
